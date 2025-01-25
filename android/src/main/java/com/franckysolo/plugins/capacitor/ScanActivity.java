@@ -29,7 +29,7 @@ import com.franckysolo.plugins.capacitor.capacitormlkitbarcodescanner.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.common.util.concurrent.ListenableFuture;
-import com.google.mlkit.vision.barcode.Barcode;
+import com.google.mlkit.vision.barcode.common.Barcode;
 import com.google.mlkit.vision.barcode.BarcodeScanner;
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions;
 import com.google.mlkit.vision.barcode.BarcodeScanning;
@@ -227,7 +227,7 @@ public class ScanActivity extends AppCompatActivity {
                 .setCaptureMode(ImageCapture.CAPTURE_MODE_MINIMIZE_LATENCY)
                 .build();
 
-        preview.setSurfaceProvider(mScanPreview.createSurfaceProvider());
+        preview.setSurfaceProvider(mScanPreview.getSurfaceProvider());
 
         cameraProvider.bindToLifecycle(
             this,
